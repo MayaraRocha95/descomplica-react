@@ -1,9 +1,11 @@
 import './App.css';
+import Voos from './Voos';
+
 const Title = () =>{
   return(
     <h1>
-    <span>olá </span>
-    <strong>mundo</strong>
+    <span>Olá </span>
+    <strong>Mundo</strong>
     !!!
   </h1>
   )
@@ -53,6 +55,7 @@ const labelBotao = 'Entre aqui'
   return (
     <div className="App">
    <Title />
+   <Voos />
    <Lista />
    <Pessoa idade={19} />
    <Pessoa idade={14} />

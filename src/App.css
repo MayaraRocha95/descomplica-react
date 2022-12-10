@@ -1,10 +1,7 @@
 *{
-  margin: 5px;
+  margin: 15px;
 }
-.App {
-  text-align: center;
-  
-}
+
 .button1 button {
   background-color: #4CAF50; /* Green */
     border: none;
@@ -14,6 +11,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
 }
 .button2  button {
   background-color: #4CAF50; /* Green */
@@ -24,4 +22,5 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
 }
