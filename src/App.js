@@ -25,12 +25,35 @@ function Pessoa(props) {
       você é {props.idade >= 18 ? <PessoaIdade label='De Maior' /> : <PessoaIdade label='De menor' />}</section> //Operador ternário
   )
 }
+const ListaItem = ({label}) => {
+  return(
+    <li><strong>{label}</strong></li>
+  )
+}
+
+const Lista = () => {
+  const passos = [
+    'Lista em React' ,
+    'Configurar projetos',
+    'Criar componentes',
+    'Escrever testes',
+    'Fazer deploy'
+  ];
+  return(
+    <ul>
+      {passos.map((valor, index) =>(
+       <ListaItem key={`item-${index}`}label={valor} />  
+      ))}
+     </ul>
+  )
+}
 function App() {
 const labelBotao = 'Entre aqui'
 
   return (
     <div className="App">
    <Title />
+   <Lista />
    <Pessoa idade={19} />
    <Pessoa idade={14} />
    <Pessoa idade={30} />
