@@ -10,12 +10,33 @@ const Title = () =>{
   </h1>
   )
 }
-
-function MyButton(props){
-    return(
-    <button type="button">{props.label}</button>
+// eslint-disable-next-line no-undef
+class MyButton extends React.Component {
+//  const handleClick = (e) => {
+ //   e.preventDefault();
+  //  console.log('clicou', e)
+ // };
+ handleClick(e) {
+e.preventDefault();
+console.log('clicou', e);
+ }
+ render() {
+    return (
+    <a  onClick={this.handleClick} href="www.descomplica.com.br">{this.props.label} - {this.props.idade}</a>
   )
 }
+ }
+
+
+function MyButtoon(props){
+ const handleClick = () => {
+   console.log('clicou')
+  }
+    return (
+    <button onClick={handleClick} type="button">{props.label}</button>
+  )
+}
+
 function PessoaIdade(props){
   return(
     <strong>{props.label}</strong>
@@ -55,6 +76,9 @@ const labelBotao = 'Entre aqui'
   return (
     <div className="App">
    <Title />
+   <div className="button2">
+    <MyButton label={`${labelBotao}  !!`}/>
+   </div>
    <Voos />
    <Lista />
    <Pessoa idade={19} />
@@ -62,12 +86,9 @@ const labelBotao = 'Entre aqui'
    <Pessoa idade={30} />
    <Pessoa idade={11} />
    <div className="button1">
-      <MyButton label="Aperte Aqui"/>
+      <MyButtoon label="Aperte Aqui"/>
    </div>
  
-   <div className="button2">
-    <MyButton label={`${labelBotao}  !!`}/>
-   </div>
    
     </div>
   );
