@@ -1,21 +1,7 @@
-import  {useState,  useEffect } from 'react';
+import { useCEP } from './hooks/useCEP'
 
 export const ViaCep = () => {
-  const [endereco, setEndereco] = useState({});
-
-
-const fetchCEP = (cep) => {
-  fetch(`https://viacep.com.br/ws/${cep}/json/`)
-  .then(dados => dados.json())
-  .then(endereco => {
-    console.log('endereco')
-    setEndereco(endereco)
-  })
-}
-
-useEffect(() =>{
-  fetchCEP('01001-000');
-}, [])
+const endereco = useCEP('01001000');
 
   return(
   <table>
