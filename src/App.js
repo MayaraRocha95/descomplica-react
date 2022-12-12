@@ -1,10 +1,10 @@
 
+
 import './App.css';
 import Voos from './Voos';
 import { AssentosOnibus } from './AssentosOnibus';
-import React from 'react';
+import React, { createContext } from 'react';
 import { ViaCep } from './ViaCep';
-
 
 const Title = () =>{
   return(
@@ -15,8 +15,6 @@ const Title = () =>{
   </h1>
   )
 }
-
-
 class MyButton extends React.Component {
 //  const handleClick = (e) => {
  //   e.preventDefault();
@@ -32,7 +30,6 @@ console.log('clicou', e);
   )
 }
  }
-
 
 function MyButtoon(props){
  const handleClick = () => {
@@ -76,11 +73,17 @@ const Lista = () => {
      </ul>
   )
 }
+
+export const ThemeContext = createContext({});
+
+
+
 function App() {
 const labelBotao = 'Entre aqui'
 
   return (
     <div className="App">
+      <ThemeContext.Provider value={{color : 'red'}} >
    <Title />
    <ViaCep />
    <br></br>
@@ -102,9 +105,9 @@ const labelBotao = 'Entre aqui'
    <div className="button1">
       <MyButtoon label="Aperte Aqui"/>
    </div>
- 
-   
+  </ThemeContext.Provider>
     </div>
+    
   );
 }
 
