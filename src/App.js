@@ -1,5 +1,9 @@
+
 import './App.css';
 import Voos from './Voos';
+import { AssentosOnibus } from './AssentosOnibus';
+import React from 'react';
+
 
 const Title = () =>{
   return(
@@ -10,7 +14,8 @@ const Title = () =>{
   </h1>
   )
 }
-// eslint-disable-next-line no-undef
+
+
 class MyButton extends React.Component {
 //  const handleClick = (e) => {
  //   e.preventDefault();
@@ -76,6 +81,11 @@ const labelBotao = 'Entre aqui'
   return (
     <div className="App">
    <Title />
+   <div className="bus">
+    <AssentosOnibus />
+   </div>
+   <br></br>
+   <br></br>
    <div className="button2">
     <MyButton label={`${labelBotao}  !!`}/>
    </div>
