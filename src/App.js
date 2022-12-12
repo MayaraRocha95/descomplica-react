@@ -3,6 +3,7 @@ import './App.css';
 import Voos from './Voos';
 import { AssentosOnibus } from './AssentosOnibus';
 import React from 'react';
+import { ViaCep } from './ViaCep';
 
 
 const Title = () =>{
@@ -81,6 +82,9 @@ const labelBotao = 'Entre aqui'
   return (
     <div className="App">
    <Title />
+   <ViaCep />
+   <br></br>
+   <br></br>
    <div className="bus">
     <AssentosOnibus />
    </div>
