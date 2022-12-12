@@ -1,32 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
-class Assento extends React.Component {
- constructor(props) {
-  super(props);
-  this.state = {
-    disable: false
+const Assento = (props) => {
+  const [disabled, setDisabled] = useState(false);
+  
+  const handleClick = () => {
+    setDisabled(true);
   }
- }
- handleClick(){
-  this.setState({//alterando a informação do meu estado.
-    disable: true
-  });
- }
+  useEffect(() => {
+      console.log('clicou')
+  },[]);
 
-  render() {
+
+  useEffect(() => {
+   if (disabled) {
+    console.log('Disabled alterou para', disabled)
+   }
+},[disabled]);
+
+
     return (
       <button className="assento"
        type="button"
-        disabled={this.state.disable}
-        onClick={this.handleClick.bind(this)}// que é o mesmo onClick={()=> this.handleClick()}
+        disabled={disabled}//estado do componente
+        onClick={()=> handleClick()} // que é o mesmo  onClick={this.handleClick.bind(this)}
         >
-       {this.state.disable ? 'X' : this.props.pos}
+       {disabled ? 'X' : props.pos}
       
       </button>
     )
   }
-}
+
 
 
 const Fileira = (props) => {
