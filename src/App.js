@@ -1,10 +1,11 @@
 
-
 import './App.css';
 import Voos from './Voos';
 import { AssentosOnibus } from './AssentosOnibus';
 import React, { createContext } from 'react';
 import { ViaCep } from './ViaCep';
+import { RenderProps } from './RenderProps';
+import { Formulario } from './Formulario';
 
 const Title = () =>{
   return(
@@ -82,9 +83,16 @@ function App() {
 const labelBotao = 'Entre aqui'
 
   return (
-    <div className="App">
-      <ThemeContext.Provider value={{color : 'red'}} >
+ 
+  <ThemeContext.Provider value={{color : 'red'}} >
+ <div className="App">      
    <Title />
+   <br></br>
+   <Formulario />
+   <br></br>
+   <RenderProps />
+   <br></br>
+   <br></br>
    <ViaCep />
    <br></br>
    <br></br>
@@ -97,17 +105,16 @@ const labelBotao = 'Entre aqui'
     <MyButton label={`${labelBotao}  !!`}/>
    </div>
    <Voos />
-   <Lista />
+  {/**  <Lista />
    <Pessoa idade={19} />
    <Pessoa idade={14} />
    <Pessoa idade={30} />
-   <Pessoa idade={11} />
+   <Pessoa idade={11} />*/}
    <div className="button1">
       <MyButtoon label="Aperte Aqui"/>
    </div>
-  </ThemeContext.Provider>
     </div>
-    
+   </ThemeContext.Provider>  
   );
 }
 
