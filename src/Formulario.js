@@ -1,20 +1,29 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export const Formulario = () => {
   const [fieldValue, setFieldValue] = useState({
     nome:'',
     cidade: ''
   });
+  const fieldCidade = useRef(null);
+
   const handleChange = (e) => {
+    e.preventDefault();
     console.log(e.target.name, e.target.value)
     setFieldValue({
       ...fieldValue,
       [e.target.name] : e.target.value
     })
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(fieldCidade.current.value)
+  }
+
   return (
     <div className="">
-      <form>
+      <form onSubmit={handleSubmit} action="https://www.descomplica.com.br">
         <input type="text"
           name="nome"
           value={fieldValue.nome}
@@ -22,9 +31,9 @@ export const Formulario = () => {
         />
          <input type="text"
           name="cidade"
-          value={fieldValue.cidade}
-          onChange={handleChange}
+          ref={fieldCidade}
         />
+        <button type="submit">Enviar</button>
       </form>
     </div>
   )
